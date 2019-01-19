@@ -89,10 +89,10 @@ console.log(`Last Car is a ${inventory[lastCar].car_make} ${inventory[lastCar].c
 // CANT USE THIS josh changed the rules
 console.log(inventory.map(e => e.car_model).sort(sortString));
 
+// MAKE SURE THE SORT IS NOT CASE SENSITIVE
 function sortString(a, b) {
     a = a.toLowerCase();
     b = b.toLowerCase();
-  
     return a < b ? -1 : b > a ? 1 : 0;
   }
 
@@ -108,18 +108,19 @@ function sortString(a, b) {
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
-let carYears = [];
-console.log();
+const carYears = inventory.map(e => e.car_year);
+console.log(carYears);
 
 // ==== Challenge 5 ====
 // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
-let oldCars =[];
-console.log(); 
+const oldCars = carYears.filter(e => e < 2000);
+console.log(oldCars.length); 
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
-let BMWAndAudi =[];
-console.log();
+const BMWAndAudi = inventory.filter(e => e.car_make == 'BMW' || e.car_make == 'Audi');
+console.log(JSON.stringify(BMWAndAudi));
+
 
 
 
