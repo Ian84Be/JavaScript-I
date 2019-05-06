@@ -33,7 +33,7 @@ const internKennan = {
   "email": "kdiben1@tinypic.com",
   "gender": "M",
   speak: function() {
-    console.log(`Hello, my name is ${this.name}!`)
+    return `Hello, my name is ${this.name}!`;
   }
 };
 
@@ -57,7 +57,7 @@ const internAn = {
   "email": "adaine5@samsung.com",
   "gender": "F",
   multiplyNums: function(a,b) {
-    console.log(a, '*', b, 'is', a*b);
+    return (a, '*', b, 'is', a*b);
   }
 };
 
